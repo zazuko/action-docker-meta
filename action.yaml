@@ -13,7 +13,7 @@ outputs:
     description: "List of tags"
 runs:
   using: "docker"
-  image: "docker.io/zazuko/deploy-image:v1.4"
+  image: "docker://docker.io/zazuko/deploy-image:v1.4"
   env:
     CI_DEFAULT_BRANCH: ${{ inputs.default-branch }}
     CI_REGISTRY_IMAGE: ${{ inputs.image-name }}
