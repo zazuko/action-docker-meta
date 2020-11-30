@@ -4,7 +4,7 @@ inputs:
   default-branch:
     description: "Name of the default Git branch"
     required: true
-    default: "master"
+    default: ${{ github.event.repository.default_branch }}
   image-name:
     description: "Name of the Docker image"
     required: true
