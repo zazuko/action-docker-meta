@@ -3,10 +3,10 @@ description: "Provide Docker metadata (tags, labels, …)"
 inputs:
   default-branch:
     description: "Name of the default Git branch"
-    required: true
+    required: false
     default: ${{ github.event.repository.default_branch }}
-  image-name:
-    description: "Name of the Docker image"
+  image:
+    description: "Docker image"
     required: true
 outputs:
   tags: # list of tags separated using commas
@@ -16,6 +16,6 @@ runs:
   image: "docker://docker.io/zazuko/deploy-image:v1.4"
   env:
     CI_DEFAULT_BRANCH: ${{ inputs.default-branch }}
-    CI_REGISTRY_IMAGE: ${{ inputs.image-name }}
+    CI_REGISTRY_IMAGE: ${{ inputs.image }}
   args:
     - github-docker
