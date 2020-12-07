@@ -5,17 +5,19 @@ inputs:
     description: "Name of the default Git branch"
     required: false
     default: ${{ github.event.repository.default_branch }}
-  image:
-    description: "Docker image"
+  images:
+    description: "Docker images"
     required: true
 outputs:
   tags: # list of tags separated using commas
     description: "List of tags"
+  labels: # list of labels separated using commas
+    description: "List of labels"
 runs:
   using: "docker"
   image: "docker://docker.io/zazuko/deploy-image:v1.4"
   env:
-    CI_DEFAULT_BRANCH: ${{ inputs.default-branch }}
-    CI_REGISTRY_IMAGE: ${{ inputs.image }}
+    DEFAULT_BRANCH: ${{ inputs.default-branch }}
+    DOCKER_IMAGES: ${{ inputs.images }}
   args:
     - github-docker
