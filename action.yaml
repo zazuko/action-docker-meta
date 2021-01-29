@@ -8,6 +8,9 @@ inputs:
   images:
     description: "Docker images"
     required: true
+  strip-tag-prefix:
+    description: "Strip a tag prefix"
+    required: false
 outputs:
   tags: # list of tags separated using commas
     description: "List of tags"
@@ -19,5 +22,6 @@ runs:
   env:
     DEFAULT_BRANCH: ${{ inputs.default-branch }}
     DOCKER_IMAGES: ${{ inputs.images }}
+    STRIP_TAG_PREFIX: ${{ inputs.strip-tag-prefix }}
   args:
     - github-docker

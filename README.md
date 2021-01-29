@@ -13,6 +13,11 @@ This will be filled in automatically if not provided.
 
 **Required** Docker images separated using commas.
 
+### `strip-tag-prefix`
+
+The prefix to strip from the tag.
+For example, for `prefix/v1.2.3` you can use `prefix/`.
+
 ## Outputs
 
 ### `tags`
