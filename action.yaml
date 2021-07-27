@@ -18,7 +18,7 @@ outputs:
     description: "List of labels"
 runs:
   using: "docker"
-  image: "docker://docker.io/zazuko/deploy-image:v1.4"
+  image: "docker://ghcr.io/zazuko/deploy-image:v1.4"
   env:
     DEFAULT_BRANCH: ${{ inputs.default-branch }}
     DOCKER_IMAGES: ${{ inputs.images }}
