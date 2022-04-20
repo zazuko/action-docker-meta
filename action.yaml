@@ -11,6 +11,9 @@ inputs:
   strip-tag-prefix:
     description: "Strip a tag prefix"
     required: false
+  include-pipeline-id:
+    description: "Include a tag that contains the branch name and the pipeline ID if set to 'true'"
+    required: false
 outputs:
   tags: # list of tags separated using commas
     description: "List of tags"
@@ -23,5 +26,6 @@ runs:
     DEFAULT_BRANCH: ${{ inputs.default-branch }}
     DOCKER_IMAGES: ${{ inputs.images }}
     STRIP_TAG_PREFIX: ${{ inputs.strip-tag-prefix }}
+    INCLUDE_PIPELINE_ID: ${{ inputs.include-pipeline-id }}
   args:
     - github-docker

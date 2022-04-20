@@ -18,6 +18,10 @@ This will be filled in automatically if not provided.
 The prefix to strip from the tag.
 For example, for `prefix/v1.2.3` you can use `prefix/`.
 
+### `include-pipeline-id`
+
+Include a tag that contains the branch name and the pipeline ID if set to `true`.
+
 ## Outputs
 
 ### `tags`
